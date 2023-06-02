@@ -97,15 +97,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e2cac7f47d641242a3219370da1bc9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movement:
-    m_Name: Movement
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: d897e56f-4e07-4570-928a-a2a310993958
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
+  speed: 30
+  xRange: 10
+  yRange: 7
+  positionPitchFactor: 2
+  controlPitchFactor: 10
+  positionYawFactor: 2
+  controlRollFactor: 10
 --- !u!1 &112353598050226223
 GameObject:
   m_ObjectHideFlags: 0
