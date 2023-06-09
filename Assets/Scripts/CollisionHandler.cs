@@ -5,14 +5,26 @@ using UnityEngine.SceneManagement;
 
 public class CollisionHandler : MonoBehaviour
 {
+    [SerializeField] float loadDelay = 1.0f;
+    [SerializeField] ParticleSystem crashVFX;
+
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log($"You're bumped into {other.transform.name}");
-        Invoke("LoadLevel", 1f);
+        StartCrashSequence();
+    }
+
+    private void StartCrashSequence()
+    {
+        crashVFX.Play();
+        GetComponent<PlayerController>().enabled = false;
+        GetComponent<BoxCollider>().enabled = false;
+        GetComponent<MeshRenderer>().enabled = false;
+        Invoke("LoadLevel", loadDelay);
     }
 
     void LoadLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex);
     }
 }

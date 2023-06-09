@@ -30,8 +30,6 @@ public class PlayerController : MonoBehaviour
 
     float xThrow, yThrow;
 
-    public bool isAlive = true;
-
     /*void OnEnable()
     {
         movement.Enable();
@@ -44,8 +42,6 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (!isAlive) { return; }
-
         ProcessMovement();
         ProcessRotation();
         ProcessFiring();
