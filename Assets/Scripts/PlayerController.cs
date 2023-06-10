@@ -49,8 +49,6 @@ public class PlayerController : MonoBehaviour
 
     void ProcessMovement()
     {
-        /*float xThrow = movement.ReadValue<Vector2>().x;
-        float yThrow = movement.ReadValue<Vector2>().y;*/
         xThrow = Input.GetAxis("Horizontal");
         yThrow = Input.GetAxis("Vertical");
 
@@ -69,9 +67,7 @@ public class PlayerController : MonoBehaviour
 
         float pitch = pitchDueToPosition + pitchDueToControlThrow;
 
-        float yawDueToPosition = transform.localPosition.x * -positionYawFactor;
-
-        float yaw = yawDueToPosition;
+        float yaw = transform.localPosition.x * positionYawFactor;
 
         float rollhDueToControlThrow = xThrow * -controlRollFactor;
 
